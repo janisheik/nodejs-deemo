@@ -1,6 +1,6 @@
 FROM node:latest
-WORKDIR /usr/src/app
-ADD ./nodeapp/* /usr/src/app/
+WORKDIR /user/share/app/test
+ADD ./nodeapp/* /user/share/app/test/
 RUN npm install
 EXPOSE 3000
 CMD [ "npm","start" ]
