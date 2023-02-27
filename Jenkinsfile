@@ -31,7 +31,7 @@ pipeline {
         }
         stage('docker run') {
             steps{
-                sh 'docker run -dp 3001:3001 jani180348/nodeapp'
+                sh 'docker run -dp 3002:3002 jani180348/nodeapp'
             }
         }
 }
