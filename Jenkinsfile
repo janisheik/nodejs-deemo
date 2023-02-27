@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps { 
-                sh 'docker build -t valaxy/nodeapp:latest .'
+                sh 'docker build -t jani180348/nodeapp:latest .'
             }
         }
         stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push valaxy/nodeapp:latest'
+                sh 'docker push jani180348/nodeapp:latest'
             }
         }
 }
