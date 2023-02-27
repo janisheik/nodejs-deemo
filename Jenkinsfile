@@ -9,7 +9,11 @@ pipeline {
             git 'https://github.com/janisheik/nodejs-deemo.git'
             }
         }
-
+        stage('stop container') {
+            steps{
+                sh 'docker stop jani180348/nodeapp'
+            }
+        }
         stage('Build docker image') {
             steps { 
                 sh 'docker build -t jani180348/nodeapp:latest .'
