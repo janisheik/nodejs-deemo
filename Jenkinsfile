@@ -11,7 +11,7 @@ pipeline {
         }
         stage('stop container') {
             steps{
-                sh 'sudo docker stop $(sudo docker ps | grep "jani180348/nodeapp" | cut -d " " -f 1)'
+                sh 'sudo docker rm $(sudo docker stop $(sudo docker ps -a | grep "jani180348/nodeapp" | cut -d " " -f 1))'
             }
         }
         stage('Build docker image') {
