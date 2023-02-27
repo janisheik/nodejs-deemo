@@ -25,6 +25,11 @@ pipeline {
                 sh 'docker push jani180348/nodeapp:latest'
             }
         }
+        stage('docker run') {
+            steps{
+                sh 'docker run -t -d name node'
+            }
+        }
 }
 post {
         always {
