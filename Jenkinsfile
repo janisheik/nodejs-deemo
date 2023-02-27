@@ -27,7 +27,7 @@ pipeline {
         }
         stage('docker run') {
             steps{
-                sh 'docker run -t -d name valaxy/nodeapp'
+                sh 'docker run -dp 3000:3000 node.js'
             }
         }
 }
