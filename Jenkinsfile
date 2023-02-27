@@ -27,7 +27,7 @@ pipeline {
         }
         stage('docker run') {
             steps{
-                sh 'docker run -t -d name nodeapp'
+                sh 'docker run -t -d name node.js'
             }
         }
 }
