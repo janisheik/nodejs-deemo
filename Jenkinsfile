@@ -11,7 +11,7 @@ pipeline {
         }
         stage('stop container') {
             steps{
-                sh 'docker stop jani180348/nodeapp'
+                sh 'sudo docker stop $(sudo docker ps | grep "jani180348/nodeapp" | cut -d " " -f 1)'
             }
         }
         stage('Build docker image') {
