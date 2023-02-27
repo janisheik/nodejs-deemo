@@ -27,7 +27,7 @@ pipeline {
         }
         stage('docker run') {
             steps{
-                sh 'docker run -dp 3000:3000 node.js'
+                sh 'docker run -dp 3000:3000 jani180348/nodeapp'
             }
         }
 }
