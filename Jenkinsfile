@@ -13,6 +13,7 @@ pipeline {
         stage('Build docker image') {
             steps {  
                 sh 'docker build -t valaxy/nodeapp:latest .'
+                sudo chmod 666 /var/run/docker.sock
             }
         }
         stage('login to dockerhub') {
