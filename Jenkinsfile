@@ -11,9 +11,9 @@ pipeline {
         }
 
         stage('Build docker image') {
-            steps {  
-                sh 'docker build -t valaxy/nodeapp:latest .'
+            steps { 
                 sh 'chmod 666 /var/run/docker.sock'
+                sh 'docker build -t valaxy/nodeapp:latest .'
             }
         }
         stage('login to dockerhub') {
