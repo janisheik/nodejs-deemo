@@ -9,6 +9,11 @@ pipeline {
             git 'https://github.com/janisheik/nodejs-deemo.git'
             }
         }
+         stage('stop container') {
+            steps{
+                sh 'sudo docker rm $(sudo docker stop $(sudo docker ps -a | grep "jani180348/nodeapp" | cut -d " " -f 1))'
+            }
+        }
         stage('Build docker image') {
             steps { 
                 sh 'docker build -t jani180348/nodeapp:latest .'
